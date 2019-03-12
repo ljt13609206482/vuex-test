@@ -1,5 +1,4 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// main.js
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -15,6 +14,17 @@ const store = new Vuex.Store({
       {name: '大盘鸡', price: 60},
       {name: '干锅牛蛙', price: 80}
     ]
+  },
+  getters:{ //添加getters
+    saleProducts: (state) => {
+      let saleProducts = state.products.map( product => {
+        return {
+          name: product.name,
+          price: product.price / 2
+        }
+      })
+      return saleProducts;
+    }
   }
 })
 

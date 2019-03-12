@@ -1,3 +1,4 @@
+<!--ProductListOne.vue-->
 <template>
     <div id="product-list-one">
         <h2>Product List One</h2>
@@ -14,7 +15,7 @@
 export default {
     data () {
         return {
-            products : this.$store.state.products //获取store中state的数据
+            products : this.$store.getters.saleProducts //获取store中state的数据
         }
     }
 }
@@ -22,7 +23,7 @@ export default {
 
 <style scoped>
 #product-list-one{
-    background: #FFF8B1;
+    background: #29BBFF;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
     margin-bottom: 30px;
     padding: 10px 20px;
@@ -35,10 +36,10 @@ export default {
     margin-right: 10px;
     margin-top: 10px;
     padding: 20px;
-    background: rgba(255,255,255,0.7);
+    background: #BFEBFF;
 }
 .price{
     font-weight: bold;
-    color: #E8800C;
+    color: #211CE8;
 }
 </style>
