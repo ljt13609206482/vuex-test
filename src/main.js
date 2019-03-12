@@ -25,6 +25,13 @@ const store = new Vuex.Store({
       })
       return saleProducts;
     }
+  },
+  mutations:{ //添加mutations
+    minusPrice (state, payload ) {
+      let newPrice = state.products.forEach( product => {
+        product.price -= payload
+      })
+    }
   }
 })
 

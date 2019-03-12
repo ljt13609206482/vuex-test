@@ -7,6 +7,7 @@
                 <span class="name">{{ product.name }}</span>
                 <span class="price">${{ product.price }}</span>
             </li>
+            <button @click="minusPrice">减少价格</button> //添加按钮
         </ul>
     </div>
 </template>
@@ -16,6 +17,11 @@ export default {
     data () {
         return {
             products : this.$store.state.products //获取store中state的数据
+        }
+    },
+    methods: {
+        minusPrice() {
+            this.$store.commit('minusPrice', 2); //提交`minusPrice,payload为2
         }
     }
 }
