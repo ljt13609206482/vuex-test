@@ -8,7 +8,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  //待添加
+  state:{
+    products: [
+      {name: '糖醋里脊', price: 20},
+      {name: '水煮肉片', price: 40},
+      {name: '大盘鸡', price: 60},
+      {name: '干锅牛蛙', price: 80}
+    ]
+  }
 })
 
 Vue.config.productionTip = false
@@ -17,6 +24,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
