@@ -32,6 +32,13 @@ const store = new Vuex.Store({
         product.price -= payload
       })
     }
+  },
+  actions:{ //添加actions
+    minusPriceAsync( context, payload ) {
+      setTimeout( () => {
+        context.commit( 'minusPrice', payload ); //context提交
+      }, 2000)
+    }
   }
 })
 

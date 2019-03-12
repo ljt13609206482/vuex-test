@@ -8,6 +8,7 @@
                 <span class="price">${{ product.price }}</span>
             </li>
             <button @click="minusPrice">减少价格</button> //添加按钮
+            <button @click="minusPriceAsync">异步减少价格</button> //添加按钮
         </ul>
     </div>
 </template>
@@ -22,6 +23,9 @@ export default {
     methods: {
         minusPrice() {
             this.$store.commit('minusPrice', 2); //提交`minusPrice,payload为2
+        },
+        minusPriceAsync() {
+            this.$store.dispatch('minusPriceAsync', 5); //分发actions中的minusPriceAsync这个异步函数
         }
     }
 }
